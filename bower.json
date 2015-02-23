@@ -1,0 +1,6 @@
+{
+  "name": "likefishing.com",
+  "dependencies": {
+    "bootstrap": "~3.3.1"
+  }
+}
