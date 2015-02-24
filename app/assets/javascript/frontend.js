@@ -1,18 +1,38 @@
+var mapEngine = null;
+
 function initialize() {
     try {
         var mapOptions = {
-            zoom: 8,
+            zoom: 15,
             scrollwheel: false
         };
 
         mapEngine = new MapEngine('map-canvas', mapOptions);
         mapEngine.createMap();
-        mapEngine.setMarker(undefined, 'Marker');
-       // mapEngine.showCurrentPosition('it works 2');
-
+        mapEngine.showCurrentPosition("It's your current position.");
     } catch (e) {}
-
 }
+
+$('#current-pos').click(function(e) {
+    e.preventDefault();
+    mapEngine.showCurrentPosition('Hello');
+});
+
+$('#set-marker').click(function(e) {
+    e.preventDefault();
+    mapEngine.setMarker('Чернигов, Шевченка 99', 'Marker', 1, '/assets/images/marker2.png');
+});
+
+$('#draw-points').click(function(e) {
+    e.preventDefault();
+    var mapOptions = {
+        zoom: 12,
+        center: new google.maps.LatLng(51.5032732, 31.337556800000016)
+    };
+    mapEngine = new MapEngine('map-canvas', mapOptions);
+    mapEngine.createMap();
+    mapEngine.drowPoints();
+});
 
 google.maps.event.addDomListener(window, 'load', initialize);
 

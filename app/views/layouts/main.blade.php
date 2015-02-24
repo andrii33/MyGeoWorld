@@ -17,12 +17,16 @@
             <div class="container">
                 <div class="navbar-inner">
                     <ul class="nav navbar-nav">
+                        <li>{{ HTML::link('/', 'Main') }}</li>
                         @if(!Auth::check())
                             <li>{{ HTML::link('users/register', 'Register') }}</li>
                             <li>{{ HTML::link('users/login', 'Login') }}</li>
                         @else
                             <li>{{ HTML::link('users/logout', 'logout') }}</li>
                         @endif
+                        <li><a href="#" id="current-pos">Current Position</a></li>
+                        <li><a href="#" id="set-marker">Marker</a></li>
+                        <li><a href="#" id="draw-points">Draw points</a></li>
                     </ul>
                 </div>
             </div>
@@ -84,7 +88,8 @@
             </div>
         </footer>
 
-        {{ HTML::script('https://maps.googleapis.com/maps/api/js?v=3.exp') }}
+        {{--{{ HTML::script('https://maps.googleapis.com/maps/api/js?v=3.exp') }}--}}
+        {{ HTML::script('https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization') }}
         {{ HTML::script('assets/javascript/mapengine.js', array('async' => 'async')) }}
         {{ HTML::script('assets/javascript/frontend.js', array('async' => 'async')) }}
     </body>
