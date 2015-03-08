@@ -1,3 +1,4 @@
+//------------------------------------------------------------------------------MAP//
 var mapEngine = null;
 
 function initialize() {
@@ -31,7 +32,7 @@ $('#draw-points').click(function(e) {
     };
     mapEngine = new MapEngine('map-canvas', mapOptions);
     mapEngine.createMap();
-    mapEngine.drowPoints();
+    mapEngine.drawPoints();
 });
 
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -43,3 +44,30 @@ $(window).resize(function () {
     $('#map-canvas').css('height', h - offsetTop);
 
 }).resize();
+//-------------------------------------------------------------------------------END MAP-//
+
+//--------------------------------------------------------------------------------CHART-//
+
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+    var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Work', 11],
+        ['Eat', 2],
+        ['Commute', 2],
+        ['Watch TV', 2],
+        ['Sleep', 7]
+    ]);
+
+    var options = {
+        title: 'My Daily Activities',
+        is3D: true
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+    chart.draw(data, options);
+}
+/*-----------------------------------------------------------------------------END CHART*/

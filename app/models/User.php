@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
@@ -45,4 +44,23 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return 'remember_token';
 	}
 
+	public function pagestorages() {
+		return $this->hasMany('Pagestorage');
+	}
+
+	public function tasks() {
+		return $this->hasMany('Task');
+	}
+
+	public function adminInGroups() {
+		return $this->belongsToMany('Group', 'admin2group', 'userid', 'groupid');
+	}
+
+	public function groups() {
+		return $this->belongsToMany('Group', 'user2group', 'userid', 'groupid');
+	}
+
+	public function locations() {
+		return $this->hasMany('Location');
+	}
 }

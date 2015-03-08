@@ -44,12 +44,8 @@
         <footer>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 twitter">
-                        <h3>Twitter feed</h3>
-                        <time datetime="2012-10-23"><a href="#">23 oct</a></time>
-                        <p>
-                            In ultricies pellentesque massa a porta. Aliquam ipsum enim, hendrerit ut porta nec, ullamcorper et nulla. In eget mi dui, sit amet scelerisque nunc. Aenean aug
-                        </p>
+                    <div class="col-md-8 twitter" id="piechart" style="width: 900px; height: 500px;">
+
                     </div>
                     <div class="col-md-4 sitemap">
                         <h3>Sitemap</h3>
@@ -88,7 +84,7 @@
             </div>
         </footer>
 
-        {{--{{ HTML::script('https://maps.googleapis.com/maps/api/js?v=3.exp') }}--}}
+        {{ HTML::script("https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}") }}
         {{ HTML::script('https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization') }}
         {{ HTML::script('assets/javascript/mapengine.js', array('async' => 'async')) }}
         {{ HTML::script('assets/javascript/frontend.js', array('async' => 'async')) }}

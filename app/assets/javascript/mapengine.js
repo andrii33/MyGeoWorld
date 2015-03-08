@@ -96,6 +96,14 @@ MapEngine.prototype.showCurrentPosition = function(message) {
     } catch (e) {}
 }
 
+/**
+ * Set marker by address
+ * @param address
+ * @param title
+ * @param zIndex
+ * @param icon
+ * @param shape
+ */
 MapEngine.prototype.setMarker = function(address, title, zIndex, icon, shape) {
     try {
         this.initGeocode();
@@ -119,7 +127,10 @@ MapEngine.prototype.setMarker = function(address, title, zIndex, icon, shape) {
     }
 }
 
-MapEngine.prototype.drowPoints = function() {
+/**
+ * Draw points on map
+ */
+MapEngine.prototype.drawPoints = function() {
     var taxiData = [
         new google.maps.LatLng(51.502551, 31.345368),
         new google.maps.LatLng(51.502745, 31.344586),
