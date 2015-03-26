@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://likefishing.com/',
+	'url' => 'http://mygeoworld/',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -122,7 +122,18 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider'
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+		'Repositories\Base\BaseRepositoryServiceProvider',
+		'Repositories\AddressRepositoryServiceProvider',
+		'Services\AddressServiceServiceProvider',
+		'Repositories\GroupRepositoryServiceProvider',
+		'Services\GroupServiceServiceProvider',
+		'Repositories\PageStorageRepositoryServiceProvider',
+		'Services\PageStorageServiceServiceProvider',
+		'Repositories\TaskRepositoryServiceProvider',
+		'Services\TaskServiceServiceProvider',
+		'Repositories\LocationRepositoryServiceProvider',
+		'Services\LocationServiceServiceProvider',
 	),
 
 	/*
@@ -189,7 +200,11 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
-
+		'Address'			=> 'Services\AddressFacade',
+		'Group'			    => 'Services\GroupFacade',
+		'PageStorage'		=> 'Services\PageStorageFacade',
+		'Task'		  		=> 'Services\TaskFacade',
+		'Location'		  	=> 'Services\LocationFacade'
 	),
 
 );

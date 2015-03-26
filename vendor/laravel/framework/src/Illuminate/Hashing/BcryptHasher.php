@@ -20,10 +20,10 @@ class BcryptHasher implements HasherInterface {
 	 */
 	public function make($value, array $options = array())
 	{
-		$cost = isset($options['rounds']) ? $options['rounds'] : $this->rounds;
+		//$cost = isset($options['rounds']) ? $options['rounds'] : $this->rounds;
 
-		// $hash = password_hash($value, PASSWORD_BCRYPT, array('cost' => $cost)); TODO
-		$hash = md5($value);
+		$hash = md5($value);//password_hash($value, PASSWORD_BCRYPT, array('cost' => $cost));
+
 		if ($hash === false)
 		{
 			throw new \RuntimeException("Bcrypt hashing not supported.");
@@ -42,7 +42,7 @@ class BcryptHasher implements HasherInterface {
 	 */
 	public function check($value, $hashedValue, array $options = array())
 	{
-		return md5($value) == $hashedValue; // password_verify($value, $hashedValue); TODO
+		return md5($value) == $hashedValue;//password_verify($value, $hashedValue);
 	}
 
 	/**

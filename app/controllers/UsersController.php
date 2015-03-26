@@ -6,6 +6,8 @@
  * Time: 3:34 PM
  */
 
+use Entities\User;
+
 class UsersController extends BaseController {
     protected $layout = "layouts.main";
 

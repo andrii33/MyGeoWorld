@@ -23,6 +23,6 @@ Route::get('/', 'BootStrapController@getTest');
 //{
 //	return View::make('bootstrap');
 //});
-//Route::controller('bootstrap', 'BootStrapController');
+Route::controller('bootstrap', 'BootStrapController');
 
 Route::controller('users', 'UsersController');

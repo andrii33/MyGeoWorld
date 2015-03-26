@@ -4,15 +4,20 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"type": "project",
+    "minimum-stability": "stable",
 	"require": {
 		"laravel/framework": "4.2.*",
-	    "phpunit/phpunit": "3.7.*"
+	    "phpunit/phpunit": "3.7.*",
+	    "barryvdh/laravel-ide-helper": "1.11.*@dev"
 	},
 	"autoload": {
 		"classmap": [
 			"app/commands",
 			"app/controllers",
 			"app/models",
+			"app/models/entities",
+			"app/models/repositories",
+			"app/models/services",
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
@@ -34,5 +39,8 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "stable",
+	"require-dev": {
+		"way/generators": "~3.0"
+	}
 }

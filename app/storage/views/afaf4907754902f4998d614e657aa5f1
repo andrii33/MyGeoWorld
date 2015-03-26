@@ -1,0 +1,15 @@
+            <?php /*<div class="">*/ ?>
+                <?php /*<blockquote>*/ ?>
+                    <?php /*<p>*/ ?>
+                        <?php /*&ldquo;Quisque in enim velit, at dignissim est. nulla ul corper, dolor ac pellentesque*/ ?>
+                        <?php /*placerat, justo tellus gravida erat, vel porttitor libero erat.&rdquo;*/ ?>
+                    <?php /*</p>*/ ?>
+                    <?php /*<small>John Doe, Lorem Ipsum</small>*/ ?>
+                <?php /*</blockquote>*/ ?>
+            <?php /*</div>*/ ?>
+            <p>
+                <div id="map-canvas" class="fish-shadow"></div>
+            </p>
+
+
+
