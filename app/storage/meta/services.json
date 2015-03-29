@@ -28,6 +28,7 @@
         "Illuminate\\Workbench\\WorkbenchServiceProvider",
         "Way\\Generators\\GeneratorsServiceProvider",
         "Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider",
+        "Maatwebsite\\Excel\\ExcelServiceProvider",
         "Repositories\\Base\\BaseRepositoryServiceProvider",
         "Repositories\\AddressRepositoryServiceProvider",
         "Services\\AddressServiceServiceProvider",
@@ -38,7 +39,9 @@
         "Repositories\\TaskRepositoryServiceProvider",
         "Services\\TaskServiceServiceProvider",
         "Repositories\\LocationRepositoryServiceProvider",
-        "Services\\LocationServiceServiceProvider"
+        "Services\\LocationServiceServiceProvider",
+        "Repositories\\MapRepositoryServiceProvider",
+        "Services\\MapServiceServiceProvider"
     ],
     "eager": [
         "Illuminate\\Cookie\\CookieServiceProvider",
@@ -49,6 +52,7 @@
         "Illuminate\\View\\ViewServiceProvider",
         "Illuminate\\Workbench\\WorkbenchServiceProvider",
         "Way\\Generators\\GeneratorsServiceProvider",
+        "Maatwebsite\\Excel\\ExcelServiceProvider",
         "Repositories\\Base\\BaseRepositoryServiceProvider",
         "Repositories\\AddressRepositoryServiceProvider",
         "Services\\AddressServiceServiceProvider",
@@ -59,7 +63,9 @@
         "Repositories\\TaskRepositoryServiceProvider",
         "Services\\TaskServiceServiceProvider",
         "Repositories\\LocationRepositoryServiceProvider",
-        "Services\\LocationServiceServiceProvider"
+        "Services\\LocationServiceServiceProvider",
+        "Repositories\\MapRepositoryServiceProvider",
+        "Services\\MapServiceServiceProvider"
     ],
     "deferred": {
         "artisan": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

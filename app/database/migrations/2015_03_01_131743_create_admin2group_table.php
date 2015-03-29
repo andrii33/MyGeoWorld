@@ -31,7 +31,7 @@ class CreateAdmin2groupTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('user2group');
+		Schema::drop('admin2group');
 	}
 
 }

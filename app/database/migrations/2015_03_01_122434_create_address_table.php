@@ -15,8 +15,8 @@ class CreateAddressTable extends Migration {
 		Schema::create('address', function($table)
 		{
 			$table->increments('id');
-			$table->float('latitude');
-			$table->float('longitude');
+			$table->double('latitude', 15, 8);
+			$table->double('longitude', 15, 8);
 			$table->string('address', 200);
 			$table->string('key', 32);
 			$table->timestamps();

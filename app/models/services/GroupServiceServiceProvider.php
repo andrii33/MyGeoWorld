@@ -14,7 +14,7 @@ class GroupServiceServiceProvider extends ServiceProvider
     {
         $this->app->bind('GroupService', function($app)
         {
-            return new AddressService(
+            return new GroupService(
                 $app['Repositories\IGroupRepository']
             );
         });

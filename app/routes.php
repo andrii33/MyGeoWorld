@@ -16,6 +16,10 @@
 //	return View::make('hello');
 //});
 Route::get('/', 'BootStrapController@getTest');
+Route::get('/dashboard', 'DashboardController@getDashboard');
+Route::any('upload-file', 'DashboardController@uploadFile');
+Route::get('/show-map', 'DashboardController@showMap');
+Route::get('/delete-map', 'DashboardController@deleteMap');
 /*
  *Bootstrap test
  */

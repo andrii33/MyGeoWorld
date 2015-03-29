@@ -1,3 +1,57 @@
 @import 'base.less';
-//styles specific for the backend
-// ...
+@import "variables.less";
+body {
+  padding-top: 40px;
+  .form-signup, .form-signin {
+    width: 400px;
+    margin: 0 auto;
+
+    .input-block-level {
+      display: block;
+      width: 100%;
+      min-height: 28px;        // Make inputs at least the height of their button counterpart
+      .box-sizing(border-box); // Makes inputs behave like true block-level elements
+    }
+    .input-margin {
+      margin-bottom: 10px;
+    }
+  }
+  .geo-shadow {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+  }
+  .geo-chart-container {
+    padding: 10px;
+    margin-bottom: 30px;
+    overflow-y: auto;
+  }
+  .sidebar {
+    position: fixed;
+    margin-top: 300px;
+//
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+//    background-color: #f5f5f5;
+//    border-right: 1px solid #eee;
+//    .nav-sidebar {
+//      height: 300px;
+//      margin-right: -21px; /* 20px padding + 1px border */
+//      margin-bottom: 20px;
+//      margin-left: -20px;
+//    }
+  }
+  .sidebar-map{
+    position: fixed;
+    margin-top: 50px;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  }
+
+  p {
+    .subtitle{
+      display: block;
+      color: #333;
+    }
+  }
+
+}

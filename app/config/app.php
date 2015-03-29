@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+		'Maatwebsite\Excel\ExcelServiceProvider',
 		'Repositories\Base\BaseRepositoryServiceProvider',
 		'Repositories\AddressRepositoryServiceProvider',
 		'Services\AddressServiceServiceProvider',
@@ -134,6 +135,8 @@ return array(
 		'Services\TaskServiceServiceProvider',
 		'Repositories\LocationRepositoryServiceProvider',
 		'Services\LocationServiceServiceProvider',
+		'Repositories\MapRepositoryServiceProvider',
+		'Services\MapServiceServiceProvider',
 	),
 
 	/*
@@ -198,13 +201,15 @@ return array(
 		'SSH'               => 'Illuminate\Support\Facades\SSH',
 		'Str'               => 'Illuminate\Support\Str',
 		'URL'               => 'Illuminate\Support\Facades\URL',
+		'Excel' => 'Maatwebsite\Excel\Facades\Excel',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
 		'Address'			=> 'Services\AddressFacade',
 		'Group'			    => 'Services\GroupFacade',
 		'PageStorage'		=> 'Services\PageStorageFacade',
 		'Task'		  		=> 'Services\TaskFacade',
-		'Location'		  	=> 'Services\LocationFacade'
+		'Location'		  	=> 'Services\LocationFacade',
+		'Map'		  	    => 'Services\MapFacade'
 	),
 
 );

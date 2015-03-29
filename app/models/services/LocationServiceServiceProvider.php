@@ -14,7 +14,7 @@ class LocationServiceServiceProvider extends ServiceProvider
     {
         $this->app->bind('LocationService', function($app)
         {
-            return new PageStorageService(
+            return new LocationService(
                 $app['Repositories\ILocationRepository']
             );
         });

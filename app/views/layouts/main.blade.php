@@ -22,6 +22,7 @@
                             <li>{{ HTML::link('users/register', 'Register') }}</li>
                             <li>{{ HTML::link('users/login', 'Login') }}</li>
                         @else
+                            <li>{{ HTML::link('/dashboard', 'Dashboard') }}</li>
                             <li>{{ HTML::link('users/logout', 'logout') }}</li>
                         @endif
                         <li><a href="#" id="current-pos">Current Position</a></li>
@@ -32,7 +33,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container-fluid">
             @if(Session::has('message'))
                 <p class="alert">{{ Session::get('message') }}</p>
             @endif
@@ -44,7 +45,7 @@
         <footer>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 twitter" id="piechart" style="width: 900px; height: 500px;">
+                    {{--<div class="col-md-8 twitter" id="piechart" style="width: 900px; height: 500px;">--}}
 
                     </div>
                     <div class="col-md-4 sitemap">
@@ -84,7 +85,7 @@
             </div>
         </footer>
 
-        {{ HTML::script("https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}") }}
+        {{ HTML::script("https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart','line']}]}") }}
         {{ HTML::script('https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization') }}
         {{ HTML::script('assets/javascript/mapengine.js', array('async' => 'async')) }}
         {{ HTML::script('assets/javascript/frontend.js', array('async' => 'async')) }}
