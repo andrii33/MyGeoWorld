@@ -29,14 +29,21 @@
                     @if(Auth::check())
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="javascript:void(0)" id="popover">Upload new file</a>
+                            <a href="javascript:void(0)" class="js-popover">Create Map from xls</a>
                             <div id="popover-head" class="hide">
-                                some title
+                                Please, fill fields and select xls file.
                             </div>
                             <div id="popover-content" class="hide">
                                 {{ Form::open(array('url'=>'upload-file','files'=>true, 'class' => 'navbar-form')) }}
-
-                                {{ Form::label('file','File',array('id'=>'','class'=>'')) }}
+                                {{ Form::text('name', null, array('class'=>'form-control input-margin', 'placeholder'=>'Map name')) }}
+                                {{ Form::text('description', null, array('class'=>'form-control input-margin', 'placeholder'=>'Map description')) }}
+                                {{ Form::text('address-column-name', null, array('class'=>'form-control input-margin', 'placeholder'=>'Address column name')) }}
+                                {{ Form::text('base-address', null, array('class'=>'form-control input-margin', 'placeholder'=>'Base address')) }}
+                                {{ Form::text('name-column-name', null, array('class'=>'form-control input-margin', 'placeholder'=>'Name column name')) }}
+                                {{ Form::text('description-column-name', null, array('class'=>'form-control input-margin', 'placeholder'=>'Description column name')) }}
+                                {{ Form::text('rating-column-name', null, array('class'=>'form-control input-margin', 'placeholder'=>'Rating column name')) }}
+                                {{ Form::text('groupby-column-name', null, array('class'=>'form-control input-margin', 'placeholder'=>'Group by column name')) }}
+                                {{--{{ Form::label('file','File',array('id'=>'','class'=>'')) }}--}}
                                 {{ Form::file('file','',array('id'=>'','class'=>'')) }}
                                 <br/>
                                 <!-- submit buttons -->

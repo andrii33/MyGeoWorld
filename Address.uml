@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\Entities\Address</OriginalElement>
+  <nodes>
+    <node x="265.0" y="1057.0">\Services\AddressServiceServiceProvider</node>
+    <node x="503.75" y="0.0">\Illuminate\Support\Contracts\ArrayableInterface</node>
+    <node x="214.75" y="0.0">\ArrayAccess</node>
+    <node x="0.0" y="1057.0">\Repositories\AddressRepositoryServiceProvider</node>
+    <node x="534.0" y="937.0">\Services\AddressService</node>
+    <node x="342.75" y="0.0">\Illuminate\Support\Contracts\JsonableInterface</node>
+    <node x="0.0" y="78.0">\Illuminate\Database\Eloquent\Model</node>
+    <node x="899.0" y="78.0">\Repositories\Base\BaseRepository</node>
+    <node x="279.0" y="822.0">\Entities\Address</node>
+    <node x="707.0" y="937.0">\Services\AddressFacade</node>
+    <node x="952.0" y="0.0">\Repositories\Base\IBaseRepositories</node>
+    <node x="297.0" y="744.0">\Eloquent</node>
+    <node x="66.75" y="0.0">\JsonSerializable</node>
+    <node x="839.0" y="324.0">\Repositories\AddressRepository</node>
+    <node x="727.0" y="162.0">\Repositories\IAddressRepository</node>
+    <node x="185.75" y="937.0">\Illuminate\Support\ServiceProvider</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\Repositories\AddressRepositoryServiceProvider" target="\Illuminate\Support\ServiceProvider">
+      <point x="0.0" y="-14.0" />
+      <point x="122.5" y="1032.0" />
+      <point x="217.75" y="1032.0" />
+      <point x="-32.0" y="35.0" />
+    </edge>
+    <edge source="\Illuminate\Database\Eloquent\Model" target="\Illuminate\Support\Contracts\ArrayableInterface">
+      <point x="255.75" y="-308.0" />
+      <point x="596.75" y="53.0" />
+      <point x="577.25" y="53.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="\Repositories\AddressRepository" target="\Repositories\Base\BaseRepository">
+      <point x="37.25" y="-24.5" />
+      <point x="950.75" y="299.0" />
+      <point x="1024.0" y="299.0" />
+      <point x="0.0" y="98.0" />
+    </edge>
+    <edge source="\Repositories\Base\BaseRepository" target="\Repositories\Base\IBaseRepositories">
+      <point x="0.0" y="-98.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="\Illuminate\Database\Eloquent\Model" target="\ArrayAccess">
+      <point x="-85.25" y="-308.0" />
+      <point x="255.75" y="53.0" />
+      <point x="268.75" y="53.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="\Repositories\AddressRepository" target="\Repositories\IAddressRepository">
+      <point x="-37.25" y="-24.5" />
+      <point x="876.25" y="299.0" />
+      <point x="803.0" y="299.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="\Illuminate\Database\Eloquent\Model" target="\Illuminate\Support\Contracts\JsonableInterface">
+      <point x="85.25" y="-308.0" />
+      <point x="426.25" y="53.0" />
+      <point x="413.25" y="53.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="\Eloquent" target="\Illuminate\Database\Eloquent\Model">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="308.0" />
+    </edge>
+    <edge source="\Illuminate\Database\Eloquent\Model" target="\JsonSerializable">
+      <point x="-255.75" y="-308.0" />
+      <point x="85.25" y="53.0" />
+      <point x="130.75" y="53.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="\Entities\Address" target="\Eloquent">
+      <point x="0.0" y="-35.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="\Services\AddressServiceServiceProvider" target="\Illuminate\Support\ServiceProvider">
+      <point x="0.0" y="-14.0" />
+      <point x="377.0" y="1032.0" />
+      <point x="281.75" y="1032.0" />
+      <point x="32.0" y="35.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="598.1428571428571" y="705.7142857142857" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

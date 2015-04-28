@@ -16,9 +16,9 @@
     <div class="col-sm-3 sidebar geo-shadow">
         <p class="text-muted">Actions:</p>
         <ul class="nav nav-sidebar">
-            <li><a href="#" id="current-pos">Current Position</a></li>
-            <li><a href="#" id="set-marker">Marker</a></li>
-            <li><a href="#" id="draw-points">Draw points</a></li>
+            <li><a href="#" id="current-pos">Show my current position</a></li>
+            <li><a href="#" id="set-marker">Show as markers</a></li>
+            <li><a href="#" id="draw-points">Show as heat map</a></li>
             <li><a class="js-delete-map text-muted" style="display: none" data-id="">Delete</a></li>
         </ul>
     </div>
@@ -31,7 +31,7 @@
         <p class="alert"></p>
             <h1>Dashboard</h1>
 
-            <h2 class="js-title">Map</h2>
+            <h2 class="js-title">You can select existing or download new map.</h2>
             <div class="row-fluid">
                 <div class="col-sm-12">
                     <div class="geo-chart-container  geo-shadow" id="line-chart" > </div>

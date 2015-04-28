@@ -11652,19 +11652,55 @@ MapEngine.prototype.setMarker = function(address, title, zIndex, icon, shape) {
     }
 }
 
-MapEngine.prototype.setMarkers = function(taxiData) {
-    taxiData.forEach(function(item, i, arr) {
-        var marker = new google.maps.Marker({
-            position: item,
-            map: MapEngine.MAP,
-            //zIndex: 1,
-            icon: '/assets/images/marker2.png'
-            //shape: shape,
-            //title: title
-        });
-    });
+MapEngine.prototype.setMarkers = function(mapData) {
+    if (mapData != undefined && mapData.length) {
+        mapData.forEach(function(item, i, arr) {
 
-    MapEngine.MAP.setCenter(taxiData[0]);
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(item.latitude, item.longitude),
+                map: MapEngine.MAP,
+                //zIndex: 1,
+                icon: '/assets/images/marker2.png',
+                //shape: shape,
+                title: item.name
+            });
+
+            if (item.name.length || item.description.lenght) {
+                var contentString = "<div>"+item.name+"</div><br />" + "<div>"+item.description+"</div>";
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+                google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.open(MapEngine.MAP,marker);
+                });
+            }
+
+        });
+
+        MapEngine.MAP.setCenter(new google.maps.LatLng(mapData[0].latitude, mapData[0].longitude));
+    }
+}
+
+/**
+ * @param elementId
+ * @param data example :
+ *  var data = google.visualization.arrayToDataTable([
+ * ['Task', 'Count'],
+ * ['Work', 11],
+ * ['Eat', 2],
+ * ['Commute', 2],
+ * ['Watch TV', 2],
+ * ['Sleep', 7]
+ * ]);
+ * @param options
+ */
+MapEngine.prototype.drawPipeChart = function(elementId, data, options) {
+    var chart = new google.visualization.PieChart(document.getElementById(elementId));
+    chart.clearChart();
+    if (data.length) {
+        data =  google.visualization.arrayToDataTable(data);
+        chart.draw(data, options);
+    }
 }
 
 /**
@@ -11686,6 +11722,24 @@ MapEngine.prototype.drawPoints = function(taxiData) {
 
     heatmap.setMap(MapEngine.MAP);
 
+    var gradient = [
+            'rgba(0, 255, 255, 0)',
+            'rgba(0, 255, 255, 1)',
+            'rgba(0, 191, 255, 1)',
+            'rgba(0, 127, 255, 1)',
+            'rgba(0, 63, 255, 1)',
+            'rgba(0, 0, 255, 1)',
+            'rgba(0, 0, 223, 1)',
+            'rgba(0, 0, 191, 1)',
+            'rgba(0, 0, 159, 1)',
+            'rgba(0, 0, 127, 1)',
+            'rgba(63, 0, 91, 1)',
+            'rgba(127, 0, 63, 1)',
+            'rgba(191, 0, 51, 1)',
+            'rgba(255, 0, 0, 1)'
+        ];
+    heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+    heatmap.set('opacity', heatmap.get('opacity') ? null : 20);
     //function toggleHeatmap() {
     //    heatmap.setMap(heatmap.getMap() ? null : map);
     //}

@@ -9,7 +9,7 @@
 use Entities\User;
 
 class UsersController extends BaseController {
-    protected $layout = "layouts.main";
+    protected $layout = "layouts.dashboard";
 
     public function __construct() {
         $this->beforeFilter('csrf', array('on'=>'post'));

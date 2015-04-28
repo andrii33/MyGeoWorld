@@ -11,7 +11,11 @@ module.exports = function(grunt) {
             },
             js_frontend: {
                 src: ['./bower_components/jquery/dist/jquery.js',
+                    './bower_components/javascript-detect-element-resize/jquery.resize.js',
                     './bower_components/bootstrap/dist/js/bootstrap.js',
+                    './bower_components/waitForImages/dist/jquery.waitforimages.js',
+                    './bower_components/modernizr/modernizr.js',
+                    './bower_components/carousel-3d/dist/jquery.carousel-3d.js',
                     './app/assets/javascript/frontend.js',
                 ],
                 dest: './public/assets/javascript/frontend.js'
@@ -95,7 +99,7 @@ module.exports = function(grunt) {
                     './bower_components/bootstrap/dist/js/bootstrap.js',
                     './app/assets/javascript/backend.js'
                 ],
-                tasks: ['concat:js_backend','uglify:backend'],     //tasks to run
+                tasks: ['concat:js_backend'], //'uglify:backend'],     //tasks to run
                 options: {
                     livereload: true                        //reloads the browser
                 }

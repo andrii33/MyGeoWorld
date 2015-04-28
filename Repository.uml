@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\Repositories\Base\BaseRepository</OriginalElement>
+  <nodes>
+    <node x="811.2083333333334" y="178.0">\Repositories\LocationRepository</node>
+    <node x="1023.9583333333334" y="79.0">\Repositories\IMapRepository</node>
+    <node x="210.25" y="178.0">\Repositories\TaskRepository</node>
+    <node x="345.1482558139535" y="252.11918604651163">\Repositories\AddressRepositoryServiceProvider</node>
+    <node x="847.9583333333334" y="79.0">\Repositories\ILocationRepository</node>
+    <node x="413.54166666666663" y="178.0">\Repositories\PageStorageRepository</node>
+    <node x="0.0" y="326.0">\Repositories\LocationRepositoryServiceProvider</node>
+    <node x="0.0" y="252.0">\Repositories\PageStorageRepositoryServiceProvider</node>
+    <node x="328.5" y="79.0">\Repositories\IPageStorageRepository</node>
+    <node x="903.1017441860465" y="252.3575581395349">\Repositories\MapRepositoryServiceProvider</node>
+    <node x="615.5416666666666" y="178.0">\Repositories\GroupRepository</node>
+    <node x="534.5416666666666" y="79.0">\Repositories\Base\BaseRepository</node>
+    <node x="637.0377906976744" y="253.375">\Repositories\Base\BaseRepositoryServiceProvider</node>
+    <node x="323.938953488372" y="321.57267441860466">\Repositories\GroupRepositoryServiceProvider</node>
+    <node x="527.0416666666666" y="0.0">\Repositories\Base\IBaseRepositories</node>
+    <node x="176.5" y="79.0">\Repositories\ITaskRepository</node>
+    <node x="993.9583333333334" y="178.0">\Repositories\MapRepository</node>
+    <node x="647.8779069767442" y="319.4186046511628">\Repositories\TaskRepositoryServiceProvider</node>
+    <node x="0.0" y="79.0">\Repositories\IAddressRepository</node>
+    <node x="39.25" y="178.0">\Repositories\AddressRepository</node>
+    <node x="686.5833333333334" y="79.0">\Repositories\IGroupRepository</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\Repositories\TaskRepository" target="\Repositories\ITaskRepository">
+      <point x="-32.25" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Repositories\AddressRepository" target="\Repositories\Base\BaseRepository">
+      <point x="37.75" y="-14.5" />
+      <point x="152.5" y="138.0" />
+      <point x="545.4583333333333" y="138.0" />
+      <point x="-54.58333333333337" y="14.5" />
+    </edge>
+    <edge source="\Repositories\Base\BaseRepository" target="\Repositories\Base\IBaseRepositories">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Repositories\MapRepository" target="\Repositories\IMapRepository">
+      <point x="31.5" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Repositories\AddressRepository" target="\Repositories\IAddressRepository">
+      <point x="-37.75" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Repositories\MapRepository" target="\Repositories\Base\BaseRepository">
+      <point x="-31.5" y="-14.5" />
+      <point x="1025.4583333333335" y="138.0" />
+      <point x="654.625" y="138.0" />
+      <point x="54.58333333333337" y="14.5" />
+    </edge>
+    <edge source="\Repositories\GroupRepository" target="\Repositories\IGroupRepository">
+      <point x="34.5" y="-14.5" />
+      <point x="719.0416666666666" y="158.0" />
+      <point x="757.0833333333334" y="158.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Repositories\LocationRepository" target="\Repositories\ILocationRepository">
+      <point x="38.25" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Repositories\GroupRepository" target="\Repositories\Base\BaseRepository">
+      <point x="-34.5" y="-14.5" />
+      <point x="650.0416666666666" y="158.0" />
+      <point x="610.9583333333333" y="158.0" />
+      <point x="10.916666666666629" y="14.5" />
+    </edge>
+    <edge source="\Repositories\PageStorageRepository" target="\Repositories\IPageStorageRepository">
+      <point x="-45.5" y="-14.5" />
+      <point x="459.04166666666663" y="128.0" />
+      <point x="421.0" y="128.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Repositories\PageStorageRepository" target="\Repositories\Base\BaseRepository">
+      <point x="45.5" y="-14.5" />
+      <point x="550.0416666666666" y="158.0" />
+      <point x="589.125" y="158.0" />
+      <point x="-10.916666666666629" y="14.5" />
+    </edge>
+    <edge source="\Repositories\LocationRepository" target="\Repositories\Base\BaseRepository">
+      <point x="-38.25" y="-14.5" />
+      <point x="849.4583333333334" y="148.0" />
+      <point x="632.7916666666666" y="148.0" />
+      <point x="32.75" y="14.5" />
+    </edge>
+    <edge source="\Repositories\TaskRepository" target="\Repositories\Base\BaseRepository">
+      <point x="32.25" y="-14.5" />
+      <point x="307.0" y="148.0" />
+      <point x="567.2916666666666" y="148.0" />
+      <point x="-32.75" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7797953964194374" x="571.7120367333551" y="202.6398819285011" />
+  <SelectedNodes />
+  <Categories />
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

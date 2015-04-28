@@ -502,6 +502,8 @@ var taxiData = [
     new google.maps.LatLng(51.552986, 31.305112),
     new google.maps.LatLng(51.551266, 31.303355)
 ];
+var mapData = [];
+var pieChartData = [];
 
 function initialize() {
     try {
@@ -526,7 +528,7 @@ $('#set-marker').click(function(e) {
     e.preventDefault();
     //mapEngine.setMarker('Чернигов, Шевченка 99', 'Marker', 1, '/assets/images/marker2.png');
     mapEngine.createMap();
-    mapEngine.setMarkers(taxiData)
+    mapEngine.setMarkers(mapData)
 });
 
 $('#draw-points').click(function(e) {
@@ -559,7 +561,7 @@ google.load("visualization", "1", {packages:["corechart", "line"]});
 function drawChart() {
 
     var data = google.visualization.arrayToDataTable([
-        ['Task', 'Hours per Day'],
+        ['Task', 'Count'],
         ['Work', 11],
         ['Eat', 2],
         ['Commute', 2],
@@ -630,7 +632,7 @@ function drawLineChart() {
 $(document).ready(function() {
     drawChart();
     drawLineChart();
-    $('#popover').popover({
+    $('.js-popover').popover({
         html : true,
         title: function() {
             return $("#popover-head").html();
@@ -653,11 +655,34 @@ $('.js-load-map').click(function() {
         },
         success: function(data) {
             taxiData = [];
+            // clear chart
+            pieChartData = [];
+            $('#piechart').empty();
+
             data = $.parseJSON(data);
-            data.forEach(function(item, i, arr) {
+            mapData = data.locations;
+
+            if (data.groupby != undefined && data.groupby.length) {
+                pieChartData.push(['Task', 'Count']);
+                data.groupby.forEach(function(item, key, arr) {
+                    pieChartData.push([item.key, item.val]);
+                });
+            }
+
+            mapData.forEach(function(item, i, arr) {
                 taxiData.push(new google.maps.LatLng(item.latitude, item.longitude));
             });
-            mapEngine.drawPoints(taxiData);
+            mapEngine.createMap();
+            mapEngine.setMarkers(mapData)
+
+            var title = $('.js-title').text();
+            var options = {
+                title: title,
+                is3D: true,
+                height: 300
+            };
+            mapEngine.drawPipeChart('piechart', pieChartData, options);
+
         }
     });
     $('.js-title').text(title);
@@ -678,19 +703,14 @@ $('.js-delete-map').click(function() {
                 id: id
             },
             success: function(data) {
-                taxiData = [];
-                data = $.parseJSON(data);
-                data.forEach(function(item, i, arr) {
-                    taxiData.push(new google.maps.LatLng(item.latitude, item.longitude));
-                });
-                mapEngine.drawPoints(taxiData);
+                $(this).attr('data-id', '');
+                $(this).hide();
+                $('a[data-id="'+id+'"]').remove();
+                $('.js-title').text('You can select existing or download new map.');
+                initialize();
             }
         });
     }
-    $(this).attr('data-id', '');
-    $(this).hide();
-    $('a[data-id="'+id+'"]').remove();
-    initialize();
     return false;
 });
 /*----------------------------------------------------------------------------------*/

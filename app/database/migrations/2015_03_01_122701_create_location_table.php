@@ -22,6 +22,7 @@ class CreateLocationTable extends Migration {
 			$table->double('latitude', 15, 8);
 			$table->double('longitude', 15, 8);
 			$table->integer('weight');
+			$table->string('groupby', 300);
 			$table->timestamps();
 
 			$table->index('mapid');

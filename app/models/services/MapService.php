@@ -51,9 +51,11 @@ class MapService {
         $name = '',
         $description = '',
         $addressColumnNume = 'address',
+        $baseAddress = '',
         $nameColumnNume = 'name',
         $descriptionColumnNume = 'description',
-        $ratingColumnNume = 'rating'
+        $ratingColumnNume = 'rating',
+        $groupByColumnName = 'groupby'
     ) {
         $fileName = $file->getRealPath();
         $type =$file->getClientMimeType();
@@ -65,7 +67,9 @@ class MapService {
         }
         $reader = Excel::load($fileName);
         $results = $reader->toArray();
-
+        if (empty($results)) {
+            return false;
+        }
         $data = array(
             'name' => $name,
             'description' => $description,
@@ -74,13 +78,16 @@ class MapService {
         );
         $map = $this->create($data);
 
+        if (!empty($baseAddress)) {
+            $baseAddress = $baseAddress.' ';
+        }
+        $created = false;
         foreach ($results as $resultRow) {
             try {
                 if (empty($resultRow[$addressColumnNume])) {
                     continue;
                 }
-                $resultRow[$addressColumnNume] = 'Чернигов '.$resultRow[$addressColumnNume];
-                $geoAddress = Address::getGeoAddress($resultRow[$addressColumnNume]);
+                $geoAddress = Address::getGeoAddress($baseAddress.$resultRow[$addressColumnNume]);
                 $data = array(
                     'name' => isset($resultRow[$nameColumnNume]) ? $resultRow[$nameColumnNume] : '',
                     'description' => isset($resultRow[$descriptionColumnNume]) ? $resultRow[$descriptionColumnNume] : '',
@@ -89,12 +96,20 @@ class MapService {
                     'latitude' => $geoAddress->latitude,
                     'longitude' => $geoAddress->longitude,
                     'weight' => isset($resultRow[$ratingColumnNume]) ? $resultRow[$ratingColumnNume] : '',
+                    'groupby' => isset($resultRow[$groupByColumnName]) ? $resultRow[$groupByColumnName] : '',
                 );
 //                print "<pre>"; print_r($data); print "</pre>"; exit;
                 Location::create($data);
+                $created = true;
             } catch (Exception $e) {
 
+            } catch (\Exception $e) {
+
             }
+        }
+        if (!$created) {
+            $map->delete();
+            return false;
         }
         return $map;
     }

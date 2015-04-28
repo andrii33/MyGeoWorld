@@ -9,10 +9,11 @@
     <!-- Bootstrap -->
     <?php echo HTML::style('assets/stylesheets/frontend.css');; ?>
 
+    <?php echo HTML::style('assets/stylesheets/jquery.carousel-3d.default.css');; ?>
 
 </head>
 
-    <body>
+    <body style="margin: 0px;">
 
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -26,10 +27,8 @@
                             <li><?php echo HTML::link('/dashboard', 'Dashboard'); ?></li>
                             <li><?php echo HTML::link('users/logout', 'logout'); ?></li>
                         <?php endif; ?>
-                        <li><a href="#" id="current-pos">Current Position</a></li>
-                        <li><a href="#" id="set-marker">Marker</a></li>
-                        <li><a href="#" id="draw-points">Draw points</a></li>
                     </ul>
+                    <?php /*<h1>World geo resource<span class="label label-default">New</span></h1>*/ ?>
                 </div>
             </div>
         </div>
@@ -39,53 +38,88 @@
                 <p class="alert"><?php echo Session::get('message'); ?></p>
             <?php endif; ?>
 
-            <?php echo $content; ?>
 
+            <?php /*<?php echo $content; ?>*/ ?>
         </div>
+        <div class="wrapper" style="width: 100%;">
+            <div class="banner-background" data-carousel-3d>
+                <img src="<?php echo URL::to('/'); ?>/assets/images/map1.jpg" />
+                <img src="<?php echo URL::to('/'); ?>/assets/images/map3.jpg" />
+                <img src="<?php echo URL::to('/'); ?>/assets/images/city3.gif" />
+                <!-- 16:9 aspect ratio -->
+                <div  selected>
+                    <iframe width="640" height="426" src="https://www.youtube.com/embed/i2J0J7fliBI" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <img src="<?php echo URL::to('/'); ?>/assets/images/map4.jpg" />
+            </div>
+        </div>
+        <div style="width: 99%" class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Panel heading</div>
+            <div class="panel-body">
+                <p>Some default panel content here. Nulla vitae elit libero, a pharetra augue.
+                    Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam.
+                    Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                    Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
 
-
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <?php /*<div class="col-md-8 twitter" id="piechart" style="width: 900px; height: 500px;">*/ ?>
-
-                    </div>
-                    <div class="col-md-4 sitemap">
-                        <h3>Sitemap</h3>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a href="/home/">Home</a>
-                                <a href="/about/">About</a>
-                                <a href="/services/">Services</a>
-                            </div>
-                            <div class="col-md-12">
-                                <a href="/partners/">Partners</a>
-                                <a href="/customers/">Support</a>
-                                <a href="/contact/">Contact</a>
-                            </div>
+            <div class="row">
+                <div class="col-sm-8 col-md-8">
+                    <div class="thumbnail">
+                        <img src="<?php echo URL::to('/'); ?>/assets/images/map1.jpg" />
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam.
+                                Pellentesque ornare sem lacinia quam venenati</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
                         </div>
                     </div>
-                    <div class="col-md-4 social">
-                        <h3>Social networks</h3>
-                        <a href="http://twitter.com/" class="social-icon twitter"></a>
-                        <a href="http://facebook.com/" class="social-icon facebook"></a>
-                        <a href="http://plus.google.com/" class="social-icon google-plus"></a>
-                        <a href="http://vimeo.com/" class="social-icon-small vimeo"></a>
-                        <a href="http://youtube.com/" class="social-icon-small youtube"></a>
-                        <a href="http://flickr.com/" class="social-icon-small flickr"></a>
-                        <a href="http://instagram.com/" class="social-icon-small instagram"></a>
-                        <a href="/rss/" class="social-icon-small rss"></a>
+                </div>
+                <div class="col-sm-8 col-md-8">
+                    <div class="thumbnail">
+                        <img src="<?php echo URL::to('/'); ?>/assets/images/map2.jpg" />
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam.
+                                Pellentesque ornare sem lacinia quam venenati</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        </div>
                     </div>
-                    <div class="col-md-8 footer-logo">
-                        <a href="/"><img src="<?php echo URL::to('/'); ?>/assets/images/footer-logo.png" alt="Whitesquare logo"></a>
-                        <p>
-                            Copyright &copy; 2012 Whitesquare. A
-                            <a href="http://pcklab.com">pcklab</a> creation
-                        </p>
+                </div>
+                <div class="col-sm-8 col-md-8">
+                    <div class="thumbnail">
+                        <img src="<?php echo URL::to('/'); ?>/assets/images/map3.jpg" />
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam.
+                                Pellentesque ornare sem lacinia quam venenati</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container" style="width: 100%;">
+            <div class="row">
+                <div class="col-md-24" id="map-canvas"></div>
+            </div>
+        </div>
+        <footer class="footer-style">
+            <h3>Sitemap</h3>
+            <div class="row">
+                <div >
+                    <div><a href="/home/">Home</a></div>
+                    <div><a href="/about/">About</a></div>
+                    <div><a href="/services/">Services</a></div>
+                </div>
+            </div>
         </footer>
+        <?php /*<footer>*/ ?>
+            <?php /*<div class="panel panel-default">*/ ?>
+                <?php /*<div class="panel-heading">Panel heading</div>*/ ?>
+
+            <?php /*</div>*/ ?>
+        <?php /*</footer>*/ ?>
 
         <?php echo HTML::script("https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart','line']}]}"); ?>
 

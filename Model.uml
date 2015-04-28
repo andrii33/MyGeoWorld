@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\Entities\Address</OriginalElement>
+  <nodes>
+    <node x="270.00000000000006" y="288.0">\Entities\Admin2group</node>
+    <node x="814.0" y="288.0">\Entities\User2group</node>
+    <node x="424.25000000000006" y="0.0">\Illuminate\Support\Contracts\ArrayableInterface</node>
+    <node x="743.25" y="0.0">\ArrayAccess</node>
+    <node x="639.0" y="288.0">\Entities\Task</node>
+    <node x="187.00000000000006" y="288.0">\Entities\User</node>
+    <node x="80.00000000000006" y="288.0">\Entities\Location</node>
+    <node x="1077.0" y="288.0">\Entities\Category</node>
+    <node x="261.25000000000006" y="0.0">\Illuminate\Support\Contracts\JsonableInterface</node>
+    <node x="456.50000000000006" y="79.0">\Illuminate\Database\Eloquent\Model</node>
+    <node x="722.0" y="288.0">\Entities\Group</node>
+    <node x="512.0" y="288.0">\Entities\Mapoptions</node>
+    <node x="407.00000000000006" y="288.0">\Entities\Address</node>
+    <node x="942.0" y="288.0">\Entities\Pagestorage</node>
+    <node x="0.0" y="288.0">\Entities\Map</node>
+    <node x="520.5" y="179.0">\Eloquent</node>
+    <node x="593.25" y="0.0">\JsonSerializable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\Entities\Mapoptions" target="\Eloquent">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Entities\Category" target="\Eloquent">
+      <point x="0.0" y="-14.5" />
+      <point x="1122.0" y="228.0" />
+      <point x="606.409090909091" y="228.0" />
+      <point x="40.90909090909088" y="14.5" />
+    </edge>
+    <edge source="\Illuminate\Database\Eloquent\Model" target="\Illuminate\Support\Contracts\JsonableInterface">
+      <point x="-81.75" y="-25.0" />
+      <point x="483.75000000000006" y="59.0" />
+      <point x="332.75000000000006" y="59.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Entities\Location" target="\Eloquent">
+      <point x="0.0" y="-14.5" />
+      <point x="123.50000000000006" y="238.0" />
+      <point x="532.7727272727273" y="238.0" />
+      <point x="-32.72727272727275" y="14.5" />
+    </edge>
+    <edge source="\Entities\Address" target="\Eloquent">
+      <point x="0.0" y="-14.5" />
+      <point x="449.50000000000006" y="268.0" />
+      <point x="557.318181818182" y="268.0" />
+      <point x="-8.18181818181813" y="14.5" />
+    </edge>
+    <edge source="\Entities\User" target="\Eloquent">
+      <point x="0.0" y="-14.5" />
+      <point x="218.50000000000006" y="248.0" />
+      <point x="540.9545454545455" y="248.0" />
+      <point x="-24.545454545454504" y="14.5" />
+    </edge>
+    <edge source="\Entities\Admin2group" target="\Eloquent">
+      <point x="0.0" y="-14.5" />
+      <point x="328.50000000000006" y="258.0" />
+      <point x="549.1363636363637" y="258.0" />
+      <point x="-16.363636363636374" y="14.5" />
+    </edge>
+    <edge source="\Entities\Pagestorage" target="\Eloquent">
+      <point x="0.0" y="-14.5" />
+      <point x="999.5" y="238.0" />
+      <point x="598.2272727272727" y="238.0" />
+      <point x="32.72727272727275" y="14.5" />
+    </edge>
+    <edge source="\Entities\User2group" target="\Eloquent">
+      <point x="0.0" y="-14.5" />
+      <point x="868.0" y="248.0" />
+      <point x="590.0454545454545" y="248.0" />
+      <point x="24.545454545454504" y="14.5" />
+    </edge>
+    <edge source="\Entities\Task" target="\Eloquent">
+      <point x="0.0" y="-14.5" />
+      <point x="670.5" y="268.0" />
+      <point x="573.6818181818182" y="268.0" />
+      <point x="8.18181818181813" y="14.5" />
+    </edge>
+    <edge source="\Illuminate\Database\Eloquent\Model" target="\Illuminate\Support\Contracts\ArrayableInterface">
+      <point x="-27.25" y="-25.0" />
+      <point x="538.25" y="59.0" />
+      <point x="498.75000000000006" y="59.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Illuminate\Database\Eloquent\Model" target="\ArrayAccess">
+      <point x="81.75" y="-25.0" />
+      <point x="647.25" y="59.0" />
+      <point x="798.25" y="59.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Eloquent" target="\Illuminate\Database\Eloquent\Model">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="25.0" />
+    </edge>
+    <edge source="\Entities\Group" target="\Eloquent">
+      <point x="0.0" y="-14.5" />
+      <point x="758.0" y="258.0" />
+      <point x="581.8636363636365" y="258.0" />
+      <point x="16.363636363636374" y="14.5" />
+    </edge>
+    <edge source="\Illuminate\Database\Eloquent\Model" target="\JsonSerializable">
+      <point x="27.25" y="-25.0" />
+      <point x="592.75" y="49.0" />
+      <point x="658.25" y="49.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="\Entities\Map" target="\Eloquent">
+      <point x="0.0" y="-14.5" />
+      <point x="30.0" y="228.0" />
+      <point x="524.5909090909092" y="228.0" />
+      <point x="-40.90909090909088" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7694187026116259" x="589.6361546041827" y="229.85426475418814" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
