@@ -41,7 +41,9 @@
         "Repositories\\LocationRepositoryServiceProvider",
         "Services\\LocationServiceServiceProvider",
         "Repositories\\MapRepositoryServiceProvider",
-        "Services\\MapServiceServiceProvider"
+        "Services\\MapServiceServiceProvider",
+        "Repositories\\CategoryRepositoryServiceProvider",
+        "Services\\CategoryServiceServiceProvider"
     ],
     "eager": [
         "Illuminate\\Cookie\\CookieServiceProvider",
@@ -65,7 +67,9 @@
         "Repositories\\LocationRepositoryServiceProvider",
         "Services\\LocationServiceServiceProvider",
         "Repositories\\MapRepositoryServiceProvider",
-        "Services\\MapServiceServiceProvider"
+        "Services\\MapServiceServiceProvider",
+        "Repositories\\CategoryRepositoryServiceProvider",
+        "Services\\CategoryServiceServiceProvider"
     ],
     "deferred": {
         "artisan": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

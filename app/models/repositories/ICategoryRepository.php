@@ -3,7 +3,7 @@
 namespace Repositories;
 
 
-interface IMapRepository {
+interface ICategoryRepository {
     public function all();
 
     public function count();
@@ -36,13 +36,4 @@ interface IMapRepository {
 
     public function with($relations);
 
-    public function makePublic($id);
-
-    public function makePrivate($id);
-
-    public function addCategoryById($id, $categoryId);
-
-    public function deleteCategoryById($id, $categoryId);
-
-    public function getCurrentMapCategories($id);
 }

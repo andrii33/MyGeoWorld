@@ -18,7 +18,13 @@ class DashboardController extends BaseController {
      */
     public function getDashboard() {
         $maps = Map::getCurentUsersMaps();
-        $this->layout->content = View::make('dashboard.dashboard')->with('maps', $maps);
+        $categories = Category::getCategories();
+        $this->layout->content = View::make(
+            'dashboard.dashboard', array(
+                'maps' => $maps,
+                'categories' => $categories
+            )
+        );
     }
 
     /**
@@ -67,6 +73,52 @@ class DashboardController extends BaseController {
         $id = Input::get('id');
         Map::delete($id);
         return 'ok';
+    }
+
+    /**
+     * @return string
+     */
+    public function makePrivateMap() {
+        $id = Input::get('id');
+        Map::makePrivate($id);
+        return 'ok';
+    }
+
+    /**
+     * @return string
+     */
+    public function makePublicMap() {
+        $id = Input::get('id');
+        Map::makePublic($id);
+        return 'ok';
+    }
+
+    /**
+     * @return string
+     */
+    public function addCategoryById() {
+        $mapId = Input::get('mapid');
+        $categoryId = Input::get('categoryid');
+        Map::addCategoryById($mapId, $categoryId);
+        return 'ok';
+    }
+
+    /**
+     * @return string
+     */
+    public function deleteCategoryById() {
+        $mapId = Input::get('mapid');
+        $categoryId = Input::get('categoryid');
+        Map::deleteCategoryById($mapId, $categoryId);
+        return 'ok';
+    }
+
+    /**
+     * @return string
+     */
+    public function getMapCategories() {
+        $id = Input::get('mapid');
+        return json_encode(Map::getMapCategories($id));
     }
 
     /**

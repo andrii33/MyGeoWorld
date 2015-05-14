@@ -20,6 +20,11 @@ Route::get('/dashboard', 'DashboardController@getDashboard');
 Route::any('upload-file', 'DashboardController@uploadFile');
 Route::get('/show-map', 'DashboardController@showMap');
 Route::get('/delete-map', 'DashboardController@deleteMap');
+Route::get('/make-private-map', 'DashboardController@makePrivateMap');
+Route::get('/make-public-map', 'DashboardController@makePublicMap');
+Route::get('/add-category', 'DashboardController@addCategoryById');
+Route::get('/delete-category', 'DashboardController@deleteCategoryById');
+Route::get('/map-categories', 'DashboardController@getMapCategories');
 /*
  *Bootstrap test
  */

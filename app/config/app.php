@@ -137,6 +137,8 @@ return array(
 		'Services\LocationServiceServiceProvider',
 		'Repositories\MapRepositoryServiceProvider',
 		'Services\MapServiceServiceProvider',
+		'Repositories\CategoryRepositoryServiceProvider',
+		'Services\CategoryServiceServiceProvider',
 	),
 
 	/*
@@ -201,7 +203,7 @@ return array(
 		'SSH'               => 'Illuminate\Support\Facades\SSH',
 		'Str'               => 'Illuminate\Support\Str',
 		'URL'               => 'Illuminate\Support\Facades\URL',
-		'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+		'Excel'			    => 'Maatwebsite\Excel\Facades\Excel',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
 		'Address'			=> 'Services\AddressFacade',
@@ -209,7 +211,8 @@ return array(
 		'PageStorage'		=> 'Services\PageStorageFacade',
 		'Task'		  		=> 'Services\TaskFacade',
 		'Location'		  	=> 'Services\LocationFacade',
-		'Map'		  	    => 'Services\MapFacade'
+		'Map'		  	    => 'Services\MapFacade',
+		'Category'		    => 'Services\CategoryFacade'
 	),
 
 );

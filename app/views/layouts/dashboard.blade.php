@@ -63,46 +63,17 @@
         </div>
 
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    {{--<div class="col-md-8 twitter" id="piechart" style="width: 900px; height: 500px;">--}}
-
-                    </div>
-                    <div class="col-md-4 sitemap">
-                        <h3>Sitemap</h3>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a href="/home/">Home</a>
-                                <a href="/about/">About</a>
-                                <a href="/services/">Services</a>
-                            </div>
-                            <div class="col-md-12">
-                                <a href="/partners/">Partners</a>
-                                <a href="/customers/">Support</a>
-                                <a href="/contact/">Contact</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 social">
-                        <h3>Social networks</h3>
-                        <a href="http://twitter.com/" class="social-icon twitter"></a>
-                        <a href="http://facebook.com/" class="social-icon facebook"></a>
-                        <a href="http://plus.google.com/" class="social-icon google-plus"></a>
-                        <a href="http://vimeo.com/" class="social-icon-small vimeo"></a>
-                        <a href="http://youtube.com/" class="social-icon-small youtube"></a>
-                        <a href="http://flickr.com/" class="social-icon-small flickr"></a>
-                        <a href="http://instagram.com/" class="social-icon-small instagram"></a>
-                        <a href="/rss/" class="social-icon-small rss"></a>
-                    </div>
-                    <div class="col-md-8 footer-logo">
-                        <a href="/"><img src="{{ URL::to('/') }}/assets/images/footer-logo.png" alt="Whitesquare logo"></a>
-                        <p>
-                            Copyright &copy; 2012 Whitesquare. A
-                            <a href="http://pcklab.com">pcklab</a> creation
-                        </p>
-                    </div>
+        <footer class="footer-style">
+            <h3>Sitemap</h3>
+            <div class="row">
+                <div >
+                    <div><a href="/home/">Home</a></div>
+                    <div><a href="/about/">About</a></div>
+                    <div><a href="/services/">Services</a></div>
                 </div>
+                <p>
+                    Copyright &copy; 2015 Andrii Andriiets creation
+                </p>
             </div>
         </footer>
 

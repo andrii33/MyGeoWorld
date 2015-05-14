@@ -12172,6 +12172,7 @@ $(document).ready(function() {
 /*---------------------------------Show map------------------------------------------*/
 $('.js-load-map').click(function() {
     var id = $(this).data('id');
+    var access = $(this).data('access');
     var title = $(this).text();
     $.ajax({
         url: '/show-map',
@@ -12208,18 +12209,92 @@ $('.js-load-map').click(function() {
             };
             mapEngine.drawPipeChart('piechart', pieChartData, options);
 
+            showCategories(id);
+
         }
     });
     $('.js-title').text(title);
-    $('.js-delete-map').attr('data-id', id);
+    $('#map-id').attr('data-id', id);
+    $('.js-make-public-map').hide();
+    $('.js-make-private-map').hide();
+
     $('.js-delete-map').show();
+    if (access == 'private') {
+        $('.js-make-public-map').show();
+    } else if (access == 'public') {
+        $('.js-make-private-map').show();
+    }
+
+
+
     return false;
 });
 /*-----------------------------------------------------------------------------------*/
 
+function showCategories(id) {
+    var categoryArr = [];
+    $('.js-category').removeClass('active');
+    $('.js-category').find('input').attr('checked', false);
+    $.ajax({
+        url: '/map-categories',
+        dataType: 'json',
+        data: {
+            mapid: id
+        },
+        success: function(data) {
+            console.log(data);
+            categoryArr = $.map(data, function(el) { return el; });
+            $('.js-category').each(function(i, el) {
+                if (categoryArr.indexOf($(el).data('id').toString()) != -1) {
+                    $(el).addClass('active');
+                    $(el).find('input').attr('checked', true);
+                } else {
+                    $(el).addClass('neutral');
+                    $(el).find('input').attr('checked', false);
+                }
+            });
+        }
+    });
+}
+
+/*-----------------------------Make public map--------------------------------------*/
+$('.js-make-public-map').click(function() {
+    var id = $('#map-id').attr('data-id');
+    $.ajax({
+        url: '/make-public-map',
+        data: {
+            id: id
+        },
+        success: function(data) {
+            $('.js-make-public-map').hide();
+            $('.js-make-private-map').show();
+            $('a[data-id="'+ id +'"]').attr('data-access', 'public');
+        }
+    });
+});
+/*----------------------------------------------------------------------------------*/
+
+
+/*-----------------------------Make private map--------------------------------------*/
+$('.js-make-private-map').click(function() {
+    var id = $('#map-id').attr('data-id');
+    $.ajax({
+        url: '/make-private-map',
+        data: {
+            id: id
+        },
+        success: function(data) {
+            $('.js-make-public-map').show();
+            $('.js-make-private-map').hide();
+            $('a[data-id="'+ id +'"]').attr('data-access', 'private');
+        }
+    });
+});
+/*----------------------------------------------------------------------------------*/
+
 /*------------------------------------Delete map------------------------------------*/
 $('.js-delete-map').click(function() {
-    var id = $(this).data('id');
+    var id = $('#map-id').attr('data-id');
     var r = confirm("Do you want to delete the map ?");
     if (r == true) {
         $.ajax({
@@ -12232,6 +12307,7 @@ $('.js-delete-map').click(function() {
                 $(this).hide();
                 $('a[data-id="'+id+'"]').remove();
                 $('.js-title').text('You can select existing or download new map.');
+                $('.js-make-public-map').hide();
                 initialize();
             }
         });
@@ -12239,3 +12315,39 @@ $('.js-delete-map').click(function() {
     return false;
 });
 /*----------------------------------------------------------------------------------*/
+
+/*-------------------------------- Add / Delete category ---------------------------*/
+$('.js-category').click(function() {
+    var mapId = $('#map-id').attr('data-id');
+    var categoryId = $(this).attr('data-id');
+    var currentCategory = $(this);
+    if (currentCategory.hasClass('active')) {
+        $.ajax({
+            url: '/delete-category',
+            data: {
+                mapid: mapId,
+                categoryid: categoryId
+            },
+            success: function(data) {
+                currentCategory.removeClass('active');
+                currentCategory.addClass('neutral');
+                currentCategory.find('input').attr('checked', false);
+            }
+        });
+    } else if ($(this).hasClass('neutral')) {
+        $.ajax({
+            url: '/add-category',
+            data: {
+                mapid: mapId,
+                categoryid: categoryId
+            },
+            success: function(data) {
+                currentCategory.removeClass('neutral');
+                currentCategory.addClass('active');
+                currentCategory.find('input').attr('checked', true);
+            }
+        });
+    }
+
+});
+/*--------------------------------------------------------------------------------*/

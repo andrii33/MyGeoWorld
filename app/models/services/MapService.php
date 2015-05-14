@@ -114,6 +114,10 @@ class MapService {
         return $map;
     }
 
+    /**
+     * @param $id
+     * @return bool
+     */
     public function delete($id) {
         if (empty($id)) {
             return false;
@@ -126,10 +130,56 @@ class MapService {
     }
 
     /**
+     * @param $id
+     */
+    public function makePublic($id) {
+        $this->repo->makePublic($id);
+    }
+
+    /**
+     * @param $mapId
+     * @param $categoryId
+     */
+    public function addCategoryById($mapId, $categoryId) {
+        $this->repo->addCategoryById($mapId, $categoryId);
+    }
+
+    /**
+     * @param $mapId
+     * @param $categoryId
+     */
+    public function deleteCategoryById($mapId, $categoryId) {
+        $this->repo->deleteCategoryById($mapId, $categoryId);
+    }
+
+    /**
+     * @param $id
+     */
+    public function makePrivate($id) {
+        $this->repo->makePrivate($id);
+    }
+
+    /**
+     * @param $id
+     */
+    public function getMapCategories($id) {
+        $categories = $this->repo->getCurrentMapCategories($id);
+        return $categories;
+    }
+
+    /**
+     * @param $id
+     * @param $data
+     */
+    public function updateById($id, $data) {
+        $this->repo->updateById($id, $data);
+    }
+
+    /**
      * @param array $data
      * @return mixed
      */
     public function create(array $data) {
-        return $this->repo->create($data);
+        return $this->repo->update($data);
     }
 }

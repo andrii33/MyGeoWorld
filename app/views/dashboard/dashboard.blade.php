@@ -4,7 +4,7 @@
         <ul class="nav nav-sidebar">
             @foreach($maps as $map)
             <li>
-                <a href="#" data-id="{{$map->id}}" class="js-load-map">{{$map->name}}</a>
+                <a href="#" data-id="{{$map->id}}" data-access="{{$map->access}}" class="js-load-map">{{$map->name}}</a>
             </li>
             @endforeach
             @if(!$maps)
@@ -14,11 +14,13 @@
     </div>
 
     <div class="col-sm-3 sidebar geo-shadow">
-        <p class="text-muted">Actions:</p>
+        <p class="text-muted" id="map-id" data-id="" >Actions:</p>
         <ul class="nav nav-sidebar">
             <li><a href="#" id="current-pos">Show my current position</a></li>
             <li><a href="#" id="set-marker">Show as markers</a></li>
             <li><a href="#" id="draw-points">Show as heat map</a></li>
+            <li><a class="js-make-public-map text-muted" style="display: none"  data-id="">Make it public</a></li>
+            <li><a class="js-make-private-map text-muted" style="display: none"  data-id="">Make it private</a></li>
             <li><a class="js-delete-map text-muted" style="display: none" data-id="">Delete</a></li>
         </ul>
     </div>
@@ -40,6 +42,16 @@
                     <div class="geo-chart-container  geo-shadow" id="piechart" > </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-24 ">
+                    @foreach(@$categories as $category)
+                    <span class="checkbox-inline">
+                        <label class="custom-select geo-shadow js-category" data-id="{{$category->id}}"><input type="checkbox" style="display:none"/>{{$category->name}}</label>
+                    </span>
+                    @endforeach
+                </div>
+            </div>
+            <br/>
             <div class="row-fluid">
                 <div class="col-sm-24 ">
                     <div id="map-canvas" class="geo-shadow geo-chart-container"></div>
