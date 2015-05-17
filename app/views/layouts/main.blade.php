@@ -25,6 +25,7 @@
                             <li>{{ HTML::link('/dashboard', 'Dashboard') }}</li>
                             <li>{{ HTML::link('users/logout', 'logout') }}</li>
                         @endif
+                        <li>{{ HTML::link('/maps', 'Maps') }}</li>
                     </ul>
                     {{--<h1>World geo resource<span class="label label-default">New</span></h1>--}}
                 </div>
@@ -35,73 +36,11 @@
             @if(Session::has('message'))
                 <p class="alert">{{ Session::get('message') }}</p>
             @endif
+        </div>
+
+        {{ $content }}
 
 
-            {{--{{ $content }}--}}
-        </div>
-        <div class="wrapper" style="width: 100%;">
-            <div class="banner-background" data-carousel-3d>
-                {{--<div  selected>--}}
-                    {{--<iframe width="640" height="426" src="https://www.youtube.com/embed/i2J0J7fliBI" frameborder="0" allowfullscreen></iframe>--}}
-                {{--</div>--}}
-                <img src="{{ URL::to('/') }}/assets/images/map1.jpg" />
-                <img src="{{ URL::to('/') }}/assets/images/map3.jpg" />
-                <img src="{{ URL::to('/') }}/assets/images/city3.gif" />
-
-                <img src="{{ URL::to('/') }}/assets/images/map4.jpg" />
-            </div>
-        </div>
-        <div style="width: 99%" class="panel panel-default">
-            <!-- Default panel contents -->
-            <div class="panel-heading">Panel heading</div>
-            <div class="panel-body">
-                <p>Some default panel content here. Nulla vitae elit libero, a pharetra augue.
-                    Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam.
-                    Pellentesque ornare sem lacinia quam venenatis vestibulum.
-                    Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-8 col-md-8">
-                    <div class="thumbnail">
-                        <img src="{{ URL::to('/') }}/assets/images/map1.jpg" />
-                        <div class="caption">
-                            <h3>Thumbnail label</h3>
-                            <p>Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam.
-                                Pellentesque ornare sem lacinia quam venenati</p>
-                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-md-8">
-                    <div class="thumbnail">
-                        <img src="{{ URL::to('/') }}/assets/images/map2.jpg" />
-                        <div class="caption">
-                            <h3>Thumbnail label</h3>
-                            <p>Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam.
-                                Pellentesque ornare sem lacinia quam venenati</p>
-                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-md-8">
-                    <div class="thumbnail">
-                        <img src="{{ URL::to('/') }}/assets/images/map3.jpg" />
-                        <div class="caption">
-                            <h3>Thumbnail label</h3>
-                            <p>Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam.
-                                Pellentesque ornare sem lacinia quam venenati</p>
-                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container" style="width: 100%;">
-            <div class="row">
-                <div class="col-md-24" id="map-canvas"></div>
-            </div>
-        </div>
         <footer class="footer-style">
             <h3>Sitemap</h3>
             <div class="row">

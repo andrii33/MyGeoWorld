@@ -15,7 +15,10 @@
 //{
 //	return View::make('hello');
 //});
-Route::get('/', 'BootStrapController@getTest');
+Route::get('/', 'MainPageController@getMainPage');
+
+Route::get('/maps', 'MainMapsController@getMainMapsPage');
+
 Route::get('/dashboard', 'DashboardController@getDashboard');
 Route::any('upload-file', 'DashboardController@uploadFile');
 Route::get('/show-map', 'DashboardController@showMap');
@@ -32,6 +35,5 @@ Route::get('/map-categories', 'DashboardController@getMapCategories');
 //{
 //	return View::make('bootstrap');
 //});
-Route::controller('bootstrap', 'BootStrapController');
 
 Route::controller('users', 'UsersController');

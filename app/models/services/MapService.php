@@ -1,6 +1,7 @@
 <?php namespace Services;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\DB;
 use Repositories\IMapRepository;
 use TijsVerkoyen\CssToInlineStyles\Exception;
 use Address;
@@ -17,6 +18,16 @@ class MapService {
      */
     public function __construct(IMapRepository $repo) {
         $this->repo = $repo;
+    }
+
+    /**
+     * @param $paginationCount
+     * @return mixed
+     */
+    public function getAllMaps($paginationCount) {
+        $maps = DB::table('map')->paginate($paginationCount);
+
+        return $maps;
     }
 
     /**

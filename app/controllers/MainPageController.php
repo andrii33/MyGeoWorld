@@ -1,9 +1,19 @@
 <?php
 
-class BootStrapController extends BaseController {
+class MainPageController extends BaseController {
 
 	protected $layout = "layouts.main";
 
+	public function getMainPage() {
+//		$maps = Map::getCurentUsersMaps();
+		$categories = Category::getCategories();
+		$this->layout->content = View::make(
+			'mainpage', array(
+//				'maps' => $maps,
+				'categories' => $categories
+			)
+		);
+	}
 
 	public function getTest() {
 
@@ -23,7 +33,7 @@ class BootStrapController extends BaseController {
 //
 //		$addAddress = Address::create($data);
 //		var_dump($addAddress);
-		$this->layout->content = View::make('bootstrap');
+//		$this->layout->content = View::make('bootstrap');
 	}
 
 	/**
