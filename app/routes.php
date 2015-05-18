@@ -11,16 +11,23 @@
 |
 */
 
-//Route::get('/', function()
-//{
-//	return View::make('hello');
-//});
+//--------------------------Main page-------------------------/
 Route::get('/', 'MainPageController@getMainPage');
+//------------------------------------------------------------/
 
+//--------------------Maps list page---------------------------/
 Route::get('/maps', 'MainMapsController@getMainMapsPage');
+//------------------------------------------------------------/
 
+//-------------------Map page-----------------------------------/
+Route::get('/map', 'MapController@getMap');
+//--------------------------------------------------------------/
+
+
+//-----------------Dashboard page -------------------------------/
 Route::get('/dashboard', 'DashboardController@getDashboard');
 Route::any('upload-file', 'DashboardController@uploadFile');
+Route::any('/create-group', 'DashboardController@createGroup');
 Route::get('/show-map', 'DashboardController@showMap');
 Route::get('/delete-map', 'DashboardController@deleteMap');
 Route::get('/make-private-map', 'DashboardController@makePrivateMap');
@@ -28,12 +35,9 @@ Route::get('/make-public-map', 'DashboardController@makePublicMap');
 Route::get('/add-category', 'DashboardController@addCategoryById');
 Route::get('/delete-category', 'DashboardController@deleteCategoryById');
 Route::get('/map-categories', 'DashboardController@getMapCategories');
-/*
- *Bootstrap test
- */
-//Route::get('/bootstrap', function()
-//{
-//	return View::make('bootstrap');
-//});
+//------------------------------------------------------------------/
 
+
+//-------------------------Users pages-----------------------------/
 Route::controller('users', 'UsersController');
+//----------------------------------------------------------------/

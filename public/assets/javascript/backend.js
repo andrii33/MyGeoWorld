@@ -12157,6 +12157,8 @@ function drawLineChart() {
 $(document).ready(function() {
     drawChart();
     drawLineChart();
+
+    // crate map popover
     $('.js-popover').popover({
         html : true,
         title: function() {
@@ -12164,6 +12166,17 @@ $(document).ready(function() {
         },
         content: function() {
             return $("#popover-content").html();
+        }
+    });
+
+    // create group
+    $('.js-popover-group').popover({
+        html : true,
+        title: function() {
+            return $("#popover-group-head").html();
+        },
+        content: function() {
+            return $("#popover-group-content").html();
         }
     });
 });

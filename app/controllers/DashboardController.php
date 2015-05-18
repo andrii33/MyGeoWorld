@@ -148,4 +148,25 @@ class DashboardController extends BaseController {
             return Redirect::to('/dashboard')->with('message', $e->getTraceAsString());
         }
     }
+
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws Exception
+     */
+    public function createGroup() {
+        // TODO add password and user (user to group)
+        try {
+            $group = Group::createGroup(
+                Input::get('groupname'),
+                Input::get('groupdescription')
+            );
+            if (empty($group)) {
+                throw new Exception('Failed to create group');
+            }
+            return Redirect::to('/dashboard')->with('message', 'Group successfully created.');
+        } catch (Exception $e) {
+            throw $e;
+            return Redirect::to('/dashboard')->with('message', $e->getTraceAsString());
+        }
+    }
 }

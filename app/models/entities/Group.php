@@ -4,6 +4,8 @@ use Eloquent;
 
 class Group extends Eloquent {
 
+	protected $table = 'group';
+
 	protected $fillable = array('name', 'description', 'password');
 
 	public function locations() {

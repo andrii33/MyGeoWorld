@@ -41,19 +41,25 @@
         {{ $content }}
 
 
-        <footer class="footer-style">
-            <h3>Sitemap</h3>
-            <div class="row">
-                <div >
-                    <div><a href="/home/">Home</a></div>
-                    <div><a href="/about/">About</a></div>
-                    <div><a href="/services/">Services</a></div>
-                </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-22">
+                <footer class="panel panel-default footer-style">
+                    <h3>Sitemap</h3>
+                    <div class="row">
+                        <div >
+                            <div><a href="/home/">Home</a></div>
+                            <div><a href="/about/">About</a></div>
+                            <div><a href="/services/">Services</a></div>
+                        </div>
+                        <p>
+                            Copyright &copy; 2015 Andrii Andriiets creation
+                        </p>
+                    </div>
+                </footer>
             </div>
-            <p>
-                Copyright &copy; 2015 Andrii Andriiets creation
-            </p>
-        </footer>
+            <div class="col-sm-1"></div>
+        </div>
         {{--<footer>--}}
             {{--<div class="panel panel-default">--}}
                 {{--<div class="panel-heading">Panel heading</div>--}}

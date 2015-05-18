@@ -21,6 +21,14 @@ class MapService {
     }
 
     /**
+     * @param $id
+     * @return mixed
+     */
+    public function getMapById($id) {
+        return $this->repo->getById($id);
+    }
+
+    /**
      * @param $paginationCount
      * @return mixed
      */

@@ -50,6 +50,22 @@
                                     {{ Form::close() }}
                                 </div>
                             </li>
+                            <li>
+                                <a href="javascript:void(0)" class="js-popover-group">Create new group</a>
+                                <div id="popover-group-head" class="hide">
+                                    Please, fill fields
+                                </div>
+                                <div id="popover-group-content" class="hide">
+                                    {{ Form::open(array('url'=>'create-group','files'=>false, 'class' => 'navbar-form')) }}
+                                    {{ Form::text('groupname', null, array('class'=>'form-control input-margin', 'placeholder'=>'Group name')) }}
+                                    {{ Form::text('groupdescription', null, array('class'=>'form-control input-margin', 'placeholder'=>'Group description')) }}
+                                    <br/>
+                                    <!-- submit buttons -->
+                                    {{ Form::submit('Save') }}
+
+                                    {{ Form::close() }}
+                                </div>
+                            </li>
                         @endif
                         <li>{{ HTML::link('/maps', 'Maps') }}</li>
                     </ul>
@@ -61,20 +77,26 @@
             {{$content}}
         </div>
 
-
-        <footer class="footer-style">
-            <h3>Sitemap</h3>
-            <div class="row">
-                <div >
-                    <div><a href="/home/">Home</a></div>
-                    <div><a href="/about/">About</a></div>
-                    <div><a href="/services/">Services</a></div>
-                </div>
-                <p>
-                    Copyright &copy; 2015 Andrii Andriiets creation
-                </p>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-19">
+                <footer class="panel panel-default footer-style">
+                    <h3>Sitemap</h3>
+                    <div class="row">
+                        <div >
+                            <div><a href="/home/">Home</a></div>
+                            <div><a href="/about/">About</a></div>
+                            <div><a href="/services/">Services</a></div>
+                        </div>
+                        <p>
+                            Copyright &copy; 2015 Andrii Andriiets creation
+                        </p>
+                    </div>
+                </footer>
             </div>
-        </footer>
+            <div class="col-sm-1"></div>
+        </div>
+
 
         {{ HTML::script("https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart','line']}]}") }}
         {{ HTML::script('https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization') }}
