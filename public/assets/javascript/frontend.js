@@ -13737,7 +13737,7 @@ var pieChartData = [];
 function initialize() {
     try {
         var mapOptions = {
-            zoom: 15,
+            zoom: 8,
             scrollwheel: false
         };
 
@@ -13808,32 +13808,47 @@ function drawChart() {
 function drawLineChart() {
 
     var data = new google.visualization.DataTable();
-    data.addColumn('number', 'Day');
-    data.addColumn('number', 'Guardians of the Galaxy');
-    data.addColumn('number', 'The Avengers');
-    data.addColumn('number', 'Transformers: Age of Extinction');
+    data.addColumn('number', 'Число месяца');
+    data.addColumn('number', 'Количество заказов');
 
     data.addRows([
-        [1,  37.8, 80.8, 41.8],
-        [2,  30.9, 69.5, 32.4],
-        [3,  25.4,   57, 25.7],
-        [4,  11.7, 18.8, 10.5],
-        [5,  11.9, 17.6, 10.4],
-        [6,   8.8, 13.6,  7.7],
-        [7,   7.6, 12.3,  9.6],
-        [8,  12.3, 29.2, 10.6],
-        [9,  16.9, 42.9, 14.8],
-        [10, 12.8, 30.9, 11.6],
-        [11,  5.3,  7.9,  4.7],
-        [12,  6.6,  8.4,  5.2],
-        [13,  4.8,  6.3,  3.6],
-        [14,  4.2,  6.2,  3.4]
+        [1,  4],
+        [2,  10],
+        [3,  12],
+        [4,  0],
+        [5,  2],
+        [6,   5],
+        [7,   1],
+        [8,  1],
+        [9,  7],
+        [10, 5],
+        [11,  3],
+        [12,  0],
+        [13,  1],
+        [14,  5],
+        [15,  3],
+        [16,  6],
+        [17,  8],
+        [18,  2],
+        [19,  3],
+        [20,  1],
+        [21,  1],
+        [22,  5],
+        [23,  8],
+        [24,  1],
+        [25,  0],
+        [26,  4],
+        [27,  3],
+        [28,  3],
+        [29,  2],
+        [30,  3],
+        [31,  4],
     ]);
 
     var options = {
         chart: {
-            title: 'Box Office Earnings in First Two Weeks of Opening',
-            subtitle: 'in millions of dollars (USD)'
+            title: 'Количество заказов в интернет магазине',
+            subtitle: 'за май 2015 года'
         },
         //width: 900,
         height: 300,

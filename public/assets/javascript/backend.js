@@ -12033,7 +12033,7 @@ var pieChartData = [];
 function initialize() {
     try {
         var mapOptions = {
-            zoom: 15,
+            zoom: 8,
             scrollwheel: false
         };
 

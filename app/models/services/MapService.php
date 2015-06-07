@@ -199,6 +199,6 @@ class MapService {
      * @return mixed
      */
     public function create(array $data) {
-        return $this->repo->update($data);
+        return $this->repo->create($data);
     }
 }

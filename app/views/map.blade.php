@@ -36,6 +36,21 @@
                         <label class="custom-select geo-shadow js-category" data-id="{{$category->id}}"><input type="checkbox" style="display:none"/>{{$category->name}}</label>
                     </span>
                     @endforeach
+                    <div class="col-sm-12">
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">From:</span>
+                            <input type="text" class="form-control" placeholder="Enter from place ..." aria-describedby="basic-addon1">
+                            <span class="input-group-addon" id="basic-addon1">To:</span>
+                            <input type="text" class="form-control" placeholder="Enter to place ..." aria-describedby="basic-addon1">
+                        </div>
+                        <button type="button" class="btn btn-default btn-lg">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Create the route
+                        </button>
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
                 </div>
             </div>
             <br/>

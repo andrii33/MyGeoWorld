@@ -183,7 +183,7 @@ MapEngine.prototype.drawPipeChart = function(elementId, data, options) {
  */
 MapEngine.prototype.drawPoints = function(taxiData) {
     var mapOptions = {
-        zoom: 12,
+        zoom: 8,
         center: taxiData[0],
         scrollwheel: false
     };
@@ -215,6 +215,7 @@ MapEngine.prototype.drawPoints = function(taxiData) {
         ];
     heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
     heatmap.set('opacity', heatmap.get('opacity') ? null : 20);
+    heatmap.set('radius', heatmap.get('radius') ? null : 30);
     //function toggleHeatmap() {
     //    heatmap.setMap(heatmap.getMap() ? null : map);
     //}
