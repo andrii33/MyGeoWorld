@@ -87,7 +87,7 @@ module.exports = function(grunt) {
                     './app/assets/javascript/frontend.js',
                     './app/assets/javascript/mapengine.js'
                 ],
-                tasks: ['concat:js_frontend','concat:js_mapengine'], //,'uglify:frontend','uglify:mapengine' ],     //tasks to run
+                tasks: ['concat:js_frontend','concat:js_mapengine','uglify:frontend','uglify:mapengine' ],     //tasks to run
                 options: {
                     livereload: true                        //reloads the browser
                 }

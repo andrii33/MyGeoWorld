@@ -2,9 +2,7 @@
 use Repositories\IGroupRepository;
 use Illuminate\Support\Facades\Auth;
 
-/**
- *
- */
+
 class GroupService {
     protected $repo;
 

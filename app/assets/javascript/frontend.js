@@ -25,7 +25,6 @@ $('#current-pos').click(function(e) {
 
 $('#set-marker').click(function(e) {
     e.preventDefault();
-    //mapEngine.setMarker('Чернигов, Шевченка 99', 'Marker', 1, '/assets/images/marker2.png');
     mapEngine.createMap();
     mapEngine.setMarkers(mapData)
 });
@@ -33,12 +32,6 @@ $('#set-marker').click(function(e) {
 $('#draw-points').click(function(e) {
     e.preventDefault();
     mapEngine.createMap();
-    //var mapOptions = {
-    //    zoom: 12,
-    //    center: new google.maps.LatLng(51.5032732, 31.337556800000016)
-    //};
-    //mapEngine = new MapEngine('map-canvas', mapOptions);
-    //mapEngine.createMap();
     mapEngine.drawPoints(taxiData);
 });
 
@@ -47,9 +40,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 //--------------------------------------------------------------------------------CHART-//
 
 google.load("visualization", "1", {packages:["corechart", "line"]});
-//google.setOnLoadCallback(drawChart);
 function drawChart() {
 
+    // init data
     var data = google.visualization.arrayToDataTable([
         ['Task', 'Count'],
         ['Work', 11],

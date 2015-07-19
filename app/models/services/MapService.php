@@ -117,12 +117,9 @@ class MapService {
                     'weight' => isset($resultRow[$ratingColumnNume]) ? $resultRow[$ratingColumnNume] : '',
                     'groupby' => isset($resultRow[$groupByColumnName]) ? $resultRow[$groupByColumnName] : '',
                 );
-//                print "<pre>"; print_r($data); print "</pre>"; exit;
                 Location::create($data);
                 $created = true;
             } catch (Exception $e) {
-
-            } catch (\Exception $e) {
 
             }
         }

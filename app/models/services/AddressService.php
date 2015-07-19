@@ -6,9 +6,14 @@ use Repositories\IAddressRepository;
  */
 class AddressService
 {
-
+    /**
+     * Url for geocoding api
+     */
     const GEO_CODE_URL = 'http://maps.googleapis.com/maps/api/geocode/json?address={query}&sensor=true_or_false';
 
+    /**
+     * @var IAddressRepository
+     */
     protected $repo;
 
     /**
@@ -35,8 +40,6 @@ class AddressService
     }
 
     /**
-     *
-     *
      * @param $key
      * @return bool
      */
@@ -47,13 +50,15 @@ class AddressService
         return $this->repo->getAddressByKey($key);
     }
 
+    /**
+     * @param array $data
+     * @return mixed
+     */
     public function create(array $data) {
         return $this->repo->create($data);
     }
 
     /**
-     *
-     *
      * @param $address
      * @return mixed
      * @throws \Exception
@@ -87,11 +92,27 @@ class AddressService
         return md5($text);
     }
 
+    /**
+     * @param $term
+     * @return mixed
+     */
     protected function _getGeoCodeUrl($term) {
         $term = urlencode($term);
         return str_replace('{query}', $term, self::GEO_CODE_URL);
     }
 
+    /**
+     * @param $url
+     * @param bool $show_header
+     * @param bool $usecookie
+     * @param bool $redirect
+     * @param int $timeout
+     * @param null $postfields
+     * @param null $content_type
+     * @param null $referer
+     * @param bool $disableua
+     * @return mixed|string
+     */
     protected function getUrlData($url, $show_header=true, $usecookie = true, $redirect = true,
                                   $timeout=20,$postfields=null,
                                   $content_type=null, $referer=null, $disableua=false
@@ -138,25 +159,9 @@ class AddressService
             $options[CURLOPT_COOKIEJAR] = $this->_cookieFile;
         }
 
-//        if ( (!defined('USE_PROXY') || USE_PROXY == true) &&
-//            ($this->useProxies && isset($this->proxyObject))){
-////            if (YII_DEBUG) echo "using proxy in custom scraper\n";
-//
-//            $options[CURLOPT_HTTPPROXYTUNNEL] = true;
-//            $options[CURLOPT_PROXYPORT] = $this->proxyObject['PORT'];
-//            $options[CURLOPT_PROXYTYPE] = 'CURLPROXY_HTTP';
-//            $options[CURLOPT_PROXY] = $this->proxyObject['HOST'];
-//            if (!empty($this->proxyObject['USER']))
-//                $options[CURLOPT_PROXYUSERPWD] = $this->proxyObject['USER'] . ":" . $this->proxyObject['PASS'];
-//        }
-
-//        if(YII_DEBUG)var_dump($this->proxyObject);
-
         $ch = curl_init($url);
         curl_setopt_array($ch, $options);
         $ret = curl_exec($ch);
-
-//        if(YII_DEBUG) var_dump(curl_error($ch));
 
         if (!$redirect) {
             //return the next location if we are manually redirecting
